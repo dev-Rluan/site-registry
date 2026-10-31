@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-10-31T12:56:36.757Z",
+  "cli_version": "2.1.220 (Claude Code)",
+  "synthetic_only": true,
+  "elapsed_ms": 405,
+  "configuration": {
+    "project_skill": "/site",
+    "strict_mcp_config": true,
+    "hooks_disabled": true,
+    "settings_sources": [
+      "project"
+    ],
+    "builtin_tools": [
+      "Read",
+      "Skill"
+    ],
+    "permission_mode": "dontAsk",
+    "permission_bypass": false,
+    "session_persistence": false,
+    "chrome": false,
+    "budget_usd": 0.8,
+    "separate_synthetic_project": true
+  },
+  "exit": {
+    "code": 1,
+    "signal": null
+  },
+  "tool_calls": [],
+  "result": {
+    "subtype": "success",
+    "is_error": true,
+    "estimated_cost_usd": 0,
+    "usage": {
+      "input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 0,
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "permission_denials": [],
+    "error_message": "Failed to authenticate: OAuth session expired and could not be refreshed"
+  },
+  "checks": {
+    "cli_success": false,
+    "site_skill_discovered": true,
+    "mcp_connected": false,
+    "required_mcp_calls": false,
+    "only_allowed_tools_used": true,
+    "one_analysis_saved": false,
+    "exact_approved_evidence_versions": false,
+    "synthetic_secrets_absent": true,
+    "other_site_policy_absent": true,
+    "model_response_received": false
+  },
+  "saved_analysis": null,
+  "limitations": [
+    "Single synthetic end-to-end attempt; only a passed check establishes that step. This does not establish answer accuracy or productivity in production.",
+    "Reported USD value is Claude Code client estimate, not an invoice.",
+    "Only the requirement-review path is requested; draft creation is not required by this mode.",
+    "Claude Code 2.1.220 can emit an initial MCP status of pending before discovery finishes; successful calls and persisted evidence determine connectivity.",
+    "The recorded attempt allowed Read/Skill in a separate synthetic project, which is not an OS filesystem sandbox. The prepared rerun script has since removed Read and permits only Skill plus the five MCP tools. No model or tool call succeeded in this attempt."
+  ],
+  "documentation": [
+    "https://code.claude.com/docs/en/headless",
+    "https://code.claude.com/docs/en/skills"
+  ],
+  "configured_model": "claude-sonnet-5",
+  "initial_mcp_status": [
+    {
+      "name": "site_registry",
+      "status": "pending"
+    }
+  ],
+  "allowed_mcp_tools": [
+    "mcp__site_registry__list_sites",
+    "mcp__site_registry__get_site_context",
+    "mcp__site_registry__get_feature_map",
+    "mcp__site_registry__save_evidence_draft",
+    "mcp__site_registry__record_analysis"
+  ],
+  "tools_observed_in_initial_event": [
+    "Read",
+    "Skill"
+  ],
+  "status": "blocked_authentication"
+}

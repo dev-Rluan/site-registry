@@ -110,6 +110,14 @@ SITE_REGISTRY_DATA_DIR="$PWD/.data/demo-v2" npm run demo
 
 [아키텍처와 데이터 모델](docs/architecture.md) · [데모 따라하기](docs/demo-walkthrough.md) · [검증과 한계](docs/verification.md)
 
+## 동작과 효율 측정하기
+
+`npm run benchmark`로 가상 자료 10/100/500개의 실제 HTTP·stdio MCP 응답 속도와 승인본 선별 전후의 자료량을 측정합니다. `npm run eval:prepare`는 모델 호출 없이 A/B 질문과 근거 경계를 검사합니다.
+
+실제 모델 비교에는 로그인한 Claude Code가 필요합니다. `npm run smoke:claude`는 `/site`와 MCP 조회·분석 저장을, `npm run eval:claude -- --run`은 같은 모델의 8문항 × 2조건을 실행합니다. 설정된 계정 사용량을 소비하며, 호출당 CLI 비용 추정 상한은 smoke $0.80, A/B $0.50입니다. 비용 추정은 실제 청구액과 다를 수 있습니다.
+
+현재 로컬 성능 측정은 완료했고, 실제 AI 호출은 인증 세션 만료로 중단됐습니다. 측정 결과·재현 방법·판정 기준은 [동작·성능·AI 효율 검증](docs/evaluation.md)에 구분해 두었습니다.
+
 ## 공식 참고 문서
 
 [MCP Tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools), [stdio](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports), [초기화](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle), [Claude Code MCP](https://code.claude.com/docs/en/mcp), [Claude Code Skills](https://code.claude.com/docs/en/skills).

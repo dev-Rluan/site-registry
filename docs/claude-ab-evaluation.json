@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-10-31T13:01:26.805065+00:00",
+  "status": "blocked_authentication",
+  "completed": false,
+  "synthetic_only": true,
+  "planned_questions": 8,
+  "planned_arms": [
+    "raw_versions",
+    "approved_context"
+  ],
+  "successful_model_responses": 0,
+  "failure": {
+    "message": "Failed to authenticate: OAuth session expired and could not be refreshed",
+    "stage": "First model request; no A/B response received"
+  },
+  "runs": [],
+  "input_preparation": {
+    "validated": true,
+    "raw_versions_bytes": 5405,
+    "approved_context_bytes": 3655
+  },
+  "quality_score": null,
+  "token_saving": null,
+  "latency_improvement": null,
+  "client_estimated_cost_usd": null,
+  "note": "No completed model comparison. Input bytes are measured preparation values, not token counts or model efficiency."
+}

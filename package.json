@@ -4,8 +4,22 @@
   "description": "사람이 승인한 근거맵과 사이트·배치 정보를 Skill에 제공하고 분석 버전·출처를 기록하는 로컬 미니 프로젝트",
   "private": true,
   "license": "MIT",
-  "repository": {"type":"git","url":"https://github.com/dev-Rluan/site-registry.git"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-Rluan/site-registry.git"
+  },
   "type": "module",
-  "engines": { "node": ">=24.0.0 <25" },
-  "scripts": { "start": "node server.js", "demo": "node server.js --demo", "mcp": "node mcp.js", "test": "node --test" }
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node server.js --demo",
+    "mcp": "node mcp.js",
+    "test": "node --test",
+    "benchmark": "node scripts/benchmark.js",
+    "eval:prepare": "node scripts/evaluate-claude.js --prepare",
+    "eval:claude": "node scripts/evaluate-claude.js",
+    "smoke:claude": "node scripts/smoke-claude.js"
+  }
 }

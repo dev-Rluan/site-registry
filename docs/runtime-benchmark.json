@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-10-31T12:51:45.987Z",
+  "node": "v24.22.1",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M2 Pro",
+    "cpu_count": 10
+  },
+  "methodology": {
+    "synthetic_only": true,
+    "material_counts": [
+      10,
+      100,
+      500
+    ],
+    "versions_per_material": 3,
+    "approved_shared_fraction": 0.7,
+    "warmup_requests": 5,
+    "measured_sequential_requests": 40,
+    "cold_process_runs": 5,
+    "percentile": "nearest-rank",
+    "scope": "Single local machine, sequential requests, warm OS filesystem cache. Store uses on-disk SQLite; HTTP and stdio use real transports. Request timing includes response parsing and boundary assertions.",
+    "payload_comparison": "Same field projection of every same-site version versus approved/shared same-site versions. This measures input selection, not search relevance, model quality, tokens or total AI cost.",
+    "limitations": [
+      "No actual LLM calls or token counts.",
+      "No concurrent-user or sustained load test.",
+      "Cold process runs reuse warmed OS filesystem cache; not a machine cold boot.",
+      "HTTP fetch uses local keep-alive; results depend on host load and hardware."
+    ]
+  },
+  "scenarios": [
+    {
+      "material_count": 10,
+      "versions_per_material": 3,
+      "total_same_site_versions": 30,
+      "approved_shared_count": 7,
+      "payload": {
+        "same_field_raw_all_versions_bytes": 22912,
+        "same_field_approved_bytes": 5431,
+        "reduction_percent": 76.296,
+        "full_context_compact_json_bytes": 6813,
+        "mcp_response_line_bytes": 8149
+      },
+      "timing": {
+        "raw_version_serialization": {
+          "samples": 40,
+          "p50_ms": 0.016,
+          "p95_ms": 0.025,
+          "min_ms": 0.014,
+          "max_ms": 0.052
+        },
+        "approved_serialization": {
+          "samples": 40,
+          "p50_ms": 0.004,
+          "p95_ms": 0.005,
+          "min_ms": 0.003,
+          "max_ms": 0.286
+        },
+        "store_context": {
+          "samples": 40,
+          "p50_ms": 0.263,
+          "p95_ms": 0.348,
+          "min_ms": 0.246,
+          "max_ms": 0.768
+        },
+        "http_context_roundtrip": {
+          "samples": 40,
+          "p50_ms": 0.68,
+          "p95_ms": 1.238,
+          "min_ms": 0.535,
+          "max_ms": 1.39
+        },
+        "stdio_mcp_context_roundtrip": {
+          "samples": 40,
+          "p50_ms": 0.404,
+          "p95_ms": 0.567,
+          "min_ms": 0.36,
+          "max_ms": 0.847
+        },
+        "process_start_to_initialize": {
+          "samples": 5,
+          "p50_ms": 34.864,
+          "p95_ms": 37.25,
+          "min_ms": 33.609,
+          "max_ms": 37.25
+        },
+        "process_start_to_first_context": {
+          "samples": 5,
+          "p50_ms": 35.644,
+          "p95_ms": 38.125,
+          "min_ms": 34.49,
+          "max_ms": 38.125
+        }
+      },
+      "checks": {
+        "same_site_only": true,
+        "secrets_omitted": true,
+        "drafts_and_rejected_versions_omitted": true,
+        "nonshared_omitted": true,
+        "previous_approved_revision_retained": true
+      }
+    },
+    {
+      "material_count": 100,
+      "versions_per_material": 3,
+      "total_same_site_versions": 300,
+      "approved_shared_count": 70,
+      "payload": {
+        "same_field_raw_all_versions_bytes": 230143,
+        "same_field_approved_bytes": 54537,
+        "reduction_percent": 76.303,
+        "full_context_compact_json_bytes": 62958,
+        "mcp_response_line_bytes": 73294
+      },
+      "timing": {
+        "raw_version_serialization": {
+          "samples": 40,
+          "p50_ms": 0.155,
+          "p95_ms": 0.185,
+          "min_ms": 0.148,
+          "max_ms": 0.635
+        },
+        "approved_serialization": {
+          "samples": 40,
+          "p50_ms": 0.032,
+          "p95_ms": 0.036,
+          "min_ms": 0.032,
+          "max_ms": 0.039
+        },
+        "store_context": {
+          "samples": 40,
+          "p50_ms": 2.279,
+          "p95_ms": 2.806,
+          "min_ms": 2.053,
+          "max_ms": 3.445
+        },
+        "http_context_roundtrip": {
+          "samples": 40,
+          "p50_ms": 3.065,
+          "p95_ms": 3.907,
+          "min_ms": 2.809,
+          "max_ms": 4.082
+        },
+        "stdio_mcp_context_roundtrip": {
+          "samples": 40,
+          "p50_ms": 3.216,
+          "p95_ms": 3.791,
+          "min_ms": 2.859,
+          "max_ms": 4.438
+        },
+        "process_start_to_initialize": {
+          "samples": 5,
+          "p50_ms": 35.131,
+          "p95_ms": 36.043,
+          "min_ms": 34.431,
+          "max_ms": 36.043
+        },
+        "process_start_to_first_context": {
+          "samples": 5,
+          "p50_ms": 39.454,
+          "p95_ms": 40.408,
+          "min_ms": 38.641,
+          "max_ms": 40.408
+        }
+      },
+      "checks": {
+        "same_site_only": true,
+        "secrets_omitted": true,
+        "drafts_and_rejected_versions_omitted": true,
+        "nonshared_omitted": true,
+        "previous_approved_revision_retained": true
+      }
+    },
+    {
+      "material_count": 500,
+      "versions_per_material": 3,
+      "total_same_site_versions": 1500,
+      "approved_shared_count": 350,
+      "payload": {
+        "same_field_raw_all_versions_bytes": 1155943,
+        "same_field_approved_bytes": 273897,
+        "reduction_percent": 76.305,
+        "full_context_compact_json_bytes": 313758,
+        "mcp_response_line_bytes": 364094
+      },
+      "timing": {
+        "raw_version_serialization": {
+          "samples": 40,
+          "p50_ms": 0.807,
+          "p95_ms": 0.95,
+          "min_ms": 0.722,
+          "max_ms": 5.555
+        },
+        "approved_serialization": {
+          "samples": 40,
+          "p50_ms": 0.195,
+          "p95_ms": 0.296,
+          "min_ms": 0.175,
+          "max_ms": 0.373
+        },
+        "store_context": {
+          "samples": 40,
+          "p50_ms": 11.122,
+          "p95_ms": 15.76,
+          "min_ms": 10.427,
+          "max_ms": 17.801
+        },
+        "http_context_roundtrip": {
+          "samples": 40,
+          "p50_ms": 13.778,
+          "p95_ms": 19.063,
+          "min_ms": 13.089,
+          "max_ms": 20.089
+        },
+        "stdio_mcp_context_roundtrip": {
+          "samples": 40,
+          "p50_ms": 15.389,
+          "p95_ms": 17.433,
+          "min_ms": 13.902,
+          "max_ms": 18.29
+        },
+        "process_start_to_initialize": {
+          "samples": 5,
+          "p50_ms": 35.715,
+          "p95_ms": 37.058,
+          "min_ms": 34.179,
+          "max_ms": 37.058
+        },
+        "process_start_to_first_context": {
+          "samples": 5,
+          "p50_ms": 54.027,
+          "p95_ms": 54.956,
+          "min_ms": 52.485,
+          "max_ms": 54.956
+        }
+      },
+      "checks": {
+        "same_site_only": true,
+        "secrets_omitted": true,
+        "drafts_and_rejected_versions_omitted": true,
+        "nonshared_omitted": true,
+        "previous_approved_revision_retained": true
+      }
+    }
+  ]
+}
