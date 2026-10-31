@@ -1,0 +1,39 @@
+{
+  "captured_at": "2026-10-31T13:21:54.356Z",
+  "synthetic_only": true,
+  "summary_rendering": "01 and 02 visualize recorded measurement JSON; 03 is an unmodified screenshot of the actual app against the successful run database opened read-only.",
+  "sources": [
+    {
+      "path": "docs/model-evaluation-summary.json",
+      "sha256": "098946222fdd0294be7dd0be5fec9ee37a2e5b3f66129cf78a04ee92485afb38"
+    },
+    {
+      "path": "docs/claude-mcp-smoke.json",
+      "sha256": "3002c4da9064be10b5bfc00204075c4c5e6707bad47e7eee1659e1b03d98cf41"
+    },
+    {
+      "path": "docs/claude-ab-evaluation.json",
+      "sha256": "77130874ba0c203bbcb2c65eefe32a45f3325ac7a1ba1da23c4c7a07a5e50444"
+    }
+  ],
+  "images": [
+    {
+      "file": "01-results-overview.png",
+      "width": 2400,
+      "height": 1500,
+      "sha256": "7d0104e10dad982deadf9f58d117da34c0c6569048c0352037032c32c6fae47b"
+    },
+    {
+      "file": "02-live-mcp-result.png",
+      "width": 2400,
+      "height": 1500,
+      "sha256": "11b1fcbc654bcae03703f3d56904936323caee0486cfd6ca686c69baf12e6f45"
+    },
+    {
+      "file": "03-saved-analysis-ui.png",
+      "width": 2160,
+      "height": 1365,
+      "sha256": "2a546a3573f4cbe5a188daae47a00cdb51d92a6851e705dfe85fe560ef7047c9"
+    }
+  ]
+}

@@ -118,6 +118,8 @@ SITE_REGISTRY_DATA_DIR="$PWD/.data/demo-v2" npm run demo
 
 로컬 성능 측정과 실제 Claude Code 연동, 8문항 × 2조건의 모델 비교를 완료했습니다. 측정 결과·재현 방법·판정 기준은 [동작·성능·AI 효율 검증](docs/evaluation.md)에 구분해 두었습니다.
 
+포트폴리오용 [결과 캡처 3장과 편집 가능한 HTML](docs/captures/README.md): [비교 결과](docs/captures/01-results-overview.png) · [MCP 연동 기록](docs/captures/02-live-mcp-result.png) · [실제 분석 저장 화면](docs/captures/03-saved-analysis-ui.png).
+
 ## 공식 참고 문서
 
 [MCP Tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools), [stdio](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports), [초기화](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle), [Claude Code MCP](https://code.claude.com/docs/en/mcp), [Claude Code Skills](https://code.claude.com/docs/en/skills).
