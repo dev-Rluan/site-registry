@@ -1,9 +1,11 @@
 {
-  "generated_at": "2026-10-31T12:56:36.757Z",
-  "cli_version": "2.1.220 (Claude Code)",
+  "generated_at": "2026-10-31T13:06:54.678Z",
+  "cli_version": "2.1.316 (Claude Code)",
+  "configured_model": "claude-sonnet-5-5",
   "synthetic_only": true,
-  "elapsed_ms": 405,
+  "elapsed_ms": 15565,
   "configuration": {
+    "separate_synthetic_project": true,
     "project_skill": "/site",
     "strict_mcp_config": true,
     "hooks_disabled": true,
@@ -11,75 +13,23 @@
       "project"
     ],
     "builtin_tools": [
-      "Read",
       "Skill"
     ],
     "permission_mode": "dontAsk",
     "permission_bypass": false,
     "session_persistence": false,
     "chrome": false,
-    "budget_usd": 0.8,
-    "separate_synthetic_project": true
+    "budget_usd": 0.8
   },
   "exit": {
-    "code": 1,
+    "code": 0,
     "signal": null
   },
-  "tool_calls": [],
-  "result": {
-    "subtype": "success",
-    "is_error": true,
-    "estimated_cost_usd": 0,
-    "usage": {
-      "input_tokens": 0,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "output_tokens": 0,
-      "server_tool_use": {
-        "web_search_requests": 0,
-        "web_fetch_requests": 0
-      },
-      "service_tier": "standard",
-      "cache_creation": {
-        "ephemeral_1h_input_tokens": 0,
-        "ephemeral_5m_input_tokens": 0
-      },
-      "inference_geo": "",
-      "iterations": [],
-      "speed": "standard"
-    },
-    "permission_denials": [],
-    "error_message": "Failed to authenticate: OAuth session expired and could not be refreshed"
-  },
-  "checks": {
-    "cli_success": false,
-    "site_skill_discovered": true,
-    "mcp_connected": false,
-    "required_mcp_calls": false,
-    "only_allowed_tools_used": true,
-    "one_analysis_saved": false,
-    "exact_approved_evidence_versions": false,
-    "synthetic_secrets_absent": true,
-    "other_site_policy_absent": true,
-    "model_response_received": false
-  },
-  "saved_analysis": null,
-  "limitations": [
-    "Single synthetic end-to-end attempt; only a passed check establishes that step. This does not establish answer accuracy or productivity in production.",
-    "Reported USD value is Claude Code client estimate, not an invoice.",
-    "Only the requirement-review path is requested; draft creation is not required by this mode.",
-    "Claude Code 2.1.220 can emit an initial MCP status of pending before discovery finishes; successful calls and persisted evidence determine connectivity.",
-    "The recorded attempt allowed Read/Skill in a separate synthetic project, which is not an OS filesystem sandbox. The prepared rerun script has since removed Read and permits only Skill plus the five MCP tools. No model or tool call succeeded in this attempt."
-  ],
-  "documentation": [
-    "https://code.claude.com/docs/en/headless",
-    "https://code.claude.com/docs/en/skills"
-  ],
-  "configured_model": "claude-sonnet-5",
   "initial_mcp_status": [
     {
       "name": "site_registry",
-      "status": "pending"
+      "status": "connected",
+      "source": "dynamic"
     }
   ],
   "allowed_mcp_tools": [
@@ -90,8 +40,137 @@
     "mcp__site_registry__record_analysis"
   ],
   "tools_observed_in_initial_event": [
-    "Read",
-    "Skill"
+    "Skill",
+    "mcp__site_registry__get_feature_map",
+    "mcp__site_registry__get_site_context",
+    "mcp__site_registry__list_sites",
+    "mcp__site_registry__record_analysis",
+    "mcp__site_registry__save_evidence_draft"
   ],
-  "status": "blocked_authentication"
+  "tool_calls": [
+    {
+      "name": "mcp__site_registry__list_sites",
+      "successful": true
+    },
+    {
+      "name": "mcp__site_registry__get_site_context",
+      "successful": true
+    },
+    {
+      "name": "mcp__site_registry__get_feature_map",
+      "successful": true
+    },
+    {
+      "name": "mcp__site_registry__record_analysis",
+      "successful": true,
+      "evidence": [
+        {
+          "material_id": 1,
+          "revision": 1
+        },
+        {
+          "material_id": 2,
+          "revision": 1
+        },
+        {
+          "material_id": 3,
+          "revision": 1
+        },
+        {
+          "material_id": 6,
+          "revision": 1
+        },
+        {
+          "material_id": 7,
+          "revision": 1
+        }
+      ]
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "is_error": false,
+    "estimated_cost_usd": 0.07287,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 13677,
+      "cache_read_input_tokens": 21800,
+      "output_tokens": 1597,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 13677,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "permission_denials": []
+  },
+  "checks": {
+    "cli_success": true,
+    "site_skill_discovered": true,
+    "model_response_received": true,
+    "mcp_connected": true,
+    "required_mcp_calls": true,
+    "only_allowed_tools_used": true,
+    "one_analysis_saved": true,
+    "exact_approved_evidence_versions": true,
+    "synthetic_secrets_absent": true,
+    "other_site_policy_absent": true
+  },
+  "saved_analysis": {
+    "id": 2,
+    "revision": 1,
+    "mode": "requirement",
+    "source": "site_registry MCP: list_sites, get_site_context, get_feature_map (사이트 demo-alpha). 코드 직접 확인 없음.",
+    "result": "판단: 확정 불가. 기존 기능으로 충족 가능(확장·신규 불필요).\n[등록 사실] 정책 #1 r1: 같은 주문번호+승인번호의 승인 완료 이벤트가 2회 이상이면 중복 '의심'으로 검토, 금액만 같으면 확정하지 않음. 기능 #7 r1은 이 규칙을 따르며 #1, #2를 참조. 문서 #2 r1: order_id, approval_id, amount, status 필드. 원데이터 #3 r1: A-101/OK-01과 A-102/OK-02는 금액 12000으로 같지만 주문번호·승인번호가 달라 중복 확정 대상 아님.\n[추론] 금액 일치는 중복 판단 기준이 아니므로 안내는 order_id+approval_id 일치 여부 확인으로 충분. 이 경우도 '의심' 단계이며 최종 확정은 사람의 검토 필요.\n[불확실성] 실제 코드(approval-check.js)는 직접 확인하지 않았고 확정 절차의 정의는 등록 근거에 없음.\n적용 기준: #6 r1 (기존 기능 활용 우선, 변경 범위 최소).",
+    "evidence": [
+      {
+        "material_id": 1,
+        "revision": 1,
+        "source": "가상 정책 ALPHA-01"
+      },
+      {
+        "material_id": 2,
+        "revision": 1,
+        "source": "직접 작성한 가상 스키마"
+      },
+      {
+        "material_id": 3,
+        "revision": 1,
+        "source": "직접 작성한 가상 데이터"
+      },
+      {
+        "material_id": 6,
+        "revision": 1,
+        "source": "가상 Skill 검토 기준 1판"
+      },
+      {
+        "material_id": 7,
+        "revision": 1,
+        "source": "가상 코드 approval-check.js 및 정책 ALPHA-01"
+      }
+    ]
+  },
+  "limitations": [
+    "Single synthetic end-to-end attempt; only a passed check establishes that step. This does not establish answer accuracy or productivity in production.",
+    "Reported USD value is Claude Code client estimate, not an invoice.",
+    "Only the requirement-review path is requested; draft creation is not required by this mode.",
+    "A separate synthetic working directory and tool allowlist are used; this is not an OS filesystem sandbox. Built-in file and shell tools are disabled.",
+    "Claude Code can emit an initial MCP status of pending before discovery finishes; successful calls and persisted evidence determine connectivity."
+  ],
+  "documentation": [
+    "https://code.claude.com/docs/en/headless",
+    "https://code.claude.com/docs/en/skills"
+  ],
+  "status": "passed"
 }

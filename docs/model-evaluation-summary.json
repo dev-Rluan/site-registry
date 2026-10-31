@@ -1,0 +1,72 @@
+{
+  "model": "claude-sonnet-5-5",
+  "questions": 8,
+  "repetitions_per_arm": 1,
+  "conditions": {
+    "raw_versions": {
+      "calls": 8,
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 27616,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 8182,
+      "total_input_tokens": 27632,
+      "mean_wall_ms": 9871.125,
+      "median_wall_ms": 9822.5,
+      "min_wall_ms": 8695,
+      "max_wall_ms": 10833,
+      "mean_api_ms": 8749.375,
+      "client_estimated_cost_usd": 0.19231600000000001,
+      "mean_answer_characters": 1140.25,
+      "max_answer_characters": 1230,
+      "answers_over_requested_1200_characters": 2
+    },
+    "approved_context": {
+      "calls": 8,
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 21416,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 8352,
+      "total_input_tokens": 21432,
+      "mean_wall_ms": 9954.625,
+      "median_wall_ms": 9892.0,
+      "min_wall_ms": 8852,
+      "max_wall_ms": 11052,
+      "mean_api_ms": 8859.25,
+      "client_estimated_cost_usd": 0.169216,
+      "mean_answer_characters": 1140.5,
+      "max_answer_characters": 1296,
+      "answers_over_requested_1200_characters": 2
+    }
+  },
+  "observed_change": {
+    "total_input_tokens": 22.438,
+    "output_tokens": -2.078,
+    "mean_wall_ms": -0.846,
+    "client_estimated_cost_usd": 12.011
+  },
+  "methodology": {
+    "input_token_formula": "input_tokens + cache_creation_input_tokens + cache_read_input_tokens",
+    "token_reference": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+    "quality_status": "Completed independent AI-assisted rubric review with arm labels/timing hidden; available references can reveal condition. Not human validation. Borderline checks retained as failures and flagged.",
+    "interpretation": "Single exploratory run per question/arm. Input selection only; does not establish causal latency, general model quality or workplace productivity gains. CLI estimated cost is not billing.",
+    "output_length_note": "Both arms receive the same <=1200-character instruction. It is not a hard token cap; actual output length and over-limit counts are retained."
+  },
+  "quality": {
+    "raw_versions": {
+      "answers": 8,
+      "passed_checks": 33,
+      "total_checks": 36,
+      "critical_checks": 17,
+      "critical_failures": 0,
+      "human_review_flags": 1
+    },
+    "approved_context": {
+      "answers": 8,
+      "passed_checks": 34,
+      "total_checks": 36,
+      "critical_checks": 17,
+      "critical_failures": 0,
+      "human_review_flags": 1
+    }
+  }
+}
