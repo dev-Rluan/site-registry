@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "site-registry": {
+      "type": "stdio",
+      "command": "/ABSOLUTE/PATH/TO/node",
+      "args": ["/ABSOLUTE/PATH/TO/site-registry/mcp.js"],
+      "env": {
+        "SITE_REGISTRY_DATA_DIR": "/ABSOLUTE/PATH/TO/site-registry/.data",
+        "SITE_REGISTRY_SITE": "demo-alpha",
+        "SITE_REGISTRY_DEMO": "1"
+      }
+    }
+  }
+}

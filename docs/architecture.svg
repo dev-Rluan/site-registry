@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="900" viewBox="0 0 1700 900" role="img" aria-labelledby="title desc">
+<title id="title">Site Registry architecture</title><desc id="desc">Human review and a site-bound MCP share a local SQLite store. Only approved evidence is served to AI; drafts and analysis records can be saved. Encryption keys belong to the web process only.</desc>
+<defs><marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker><marker id="green" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#23866a"/></marker><style>text{font-family:Arial,'Apple SD Gothic Neo',sans-serif;fill:#182a40}.box{fill:white;stroke:#cbd5e1;stroke-width:2}.label{font-size:27px;font-weight:700}.body{font-size:23px;fill:#46596e}.small{font-size:20px;fill:#52657c}.line{fill:none;stroke:#52657c;stroke-width:2.7;marker-end:url(#arrow)}.approved{fill:none;stroke:#23866a;stroke-width:3;marker-end:url(#green)}</style></defs>
+<rect width="1700" height="900" fill="#f6f8fb"/>
+<text x="65" y="68" font-size="38" font-weight="700">Site Registry</text><text x="65" y="108" font-size="24" fill="#52657c">Approved evidence for AI analysis · Local, single-user demonstration</text>
+<rect class="box" x="65" y="175" width="310" height="170" rx="17"/>
+<text class="label" x="90" y="218">Claude Code /site</text><text class="body" x="90" y="260">Review criteria + analysis</text><text class="body" x="90" y="297">Cite evidence + version</text>
+<rect class="box" x="455" y="175" width="320" height="170" rx="17"/>
+<text class="label" x="480" y="218">Site-bound stdio MCP</text><text class="body" x="480" y="260">Read approved context</text><text class="body" x="480" y="297">Write drafts + analyses</text>
+<path class="line" d="M375 245H445"/>
+<rect class="box" x="65" y="500" width="310" height="175" rx="17"/>
+<text class="label" x="90" y="545">Human reviewer</text><text class="body" x="90" y="587">Local management UI</text><text class="body" x="90" y="624">Approve exact versions</text>
+<rect class="box" x="455" y="500" width="320" height="175" rx="17"/>
+<text class="label" x="480" y="545">Local HTTP API</text><text class="body" x="480" y="587">127.0.0.1:4174</text><text class="body" x="480" y="624">Review / config / batch</text>
+<path class="line" d="M375 585H445"/>
+<rect class="box" x="865" y="300" width="305" height="235" rx="17"/>
+<text class="label" x="890" y="346">Store rules</text><text class="body" x="890" y="389">Site + version checks</text><text class="body" x="890" y="427">Latest approved basis</text><text class="body" x="890" y="465">Evidence snapshots</text><text class="small" x="890" y="504">Draft ≠ approved basis</text>
+<path class="line" d="M775 255H815V350H855"/>
+<path class="line" d="M775 585H815V485H855"/>
+<rect x="1260" y="175" width="375" height="500" rx="17" fill="#edf5f1" stroke="#a8c5b6" stroke-width="2"/>
+<text class="label" x="1285" y="218">Local SQLite</text><text class="body" x="1285" y="265">sites</text><text class="body" x="1285" y="306">materials</text><text class="body" x="1285" y="347">material_versions</text><text class="body" x="1285" y="388">reviews</text><text class="body" x="1285" y="429">analyses</text><text class="body" x="1285" y="470">analysis_versions</text><text class="body" x="1285" y="528">configs · encrypted</text><text class="body" x="1285" y="569">batches · secrets encrypted</text><text class="small" x="1285" y="633">Public content stored as text</text>
+<path class="line" d="M1170 415H1250"/>
+<rect x="865" y="650" width="305" height="120" rx="17" fill="#fff5e7" stroke="#ddc49f" stroke-width="2"/>
+<text class="label" x="890" y="691">Web process key</text><text class="body" x="890" y="733">AES-256-GCM / scrypt</text>
+<path class="line" stroke-dasharray="8 7" d="M1020 650V545"/>
+<path class="approved" d="M1260 175V150H615V165"/>
+<text class="small" x="832" y="143" fill="#23866a">Approved + shared evidence only</text>
+<text class="small" x="65" y="762">MCP cannot approve evidence or retrieve keys / secret values.</text>
+<text class="small" x="65" y="800">Analysis records preserve the exact evidence version, source and content used.</text>
+<text class="small" x="65" y="850">No model API, Graph RAG, production execution or authenticated reviewer roles in this demo.</text>
+</svg>
